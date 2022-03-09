@@ -39,7 +39,19 @@
     <a style="color: red;" href="https://webiskola.hu/javascript-ismeretek/javascript-alapok-a-js-programozas-alapjai/">https://webiskola.hu/javascript-ismeretek/javascript-alapok-a-js-programozas-alapjai/</a></div>
 
     <br>
-
+        <div style="color: red;">
+    <script>
+        function displayDate() {
+         
+         var d=new Date();
+         document.getElementById("demo").innerHTML=d.toLocaleDateString();
+        }
+       </script>
+    <h2>Ez az oldal a dátumot írja ki.</h2>
+    <p id="demo">Ebbe a bekezdésbe kerül a dátum, ha a gombra kattintasz</p>
+    <button style="color: red; background-color: black; border: double; border-color: crimson; border-radius: 10px;"  type="button" onclick="displayDate()">Dátumkiírás</button>
+    </div>
+    <br>
     <p>
         5.feladat
     </p>
