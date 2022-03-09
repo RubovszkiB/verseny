@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="HU">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: black;
+            color: red;
+        }
+        li {
+            text-decoration: none;
+        }
+
+        p{
+            color: red;
+        }
+        #csoportkép {
+            border: red solid 5px;
+            color: red;
+            background-color: purple;
+            float: right;
+            margin: auto;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div style="border: red solid 5px; display: block ; margin: auto; text-align: center; background-color: black; color: red;">
+    <h1>SZC Kandó Kálmán Informatikai Technikum csapata </h1>
+    <h2>Tagok:</h2>
+    <ul>
+        <li>Rubovszki Balázs</li>
+        <li>Zelenák Szabolcs</li>
+        <li>Péterffy Dominika</li>
+    </ul>  </div>
+    <div id="csoportkép"> <h1>Itt egy csoportkép</h1> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnOPtautJxORnX1JkNLzKvhZyjMiqQa9EHlg&usqp=CAU" alt="csoportkép"></div>
+    <div><p style="color: red;">Itt egy programozó weboladal: </p>
+    <a style="color: red;" href="https://webiskola.hu/javascript-ismeretek/javascript-alapok-a-js-programozas-alapjai/">https://webiskola.hu/javascript-ismeretek/javascript-alapok-a-js-programozas-alapjai/</a></div>
+
+    <br>
+
+    <p>
+        5.feladat
+    </p>
+
+    <br>
+
+    <input type="number" placeholder="Mondjon egy egész számot!" id="szam1"><br>
+    <input type="number" placeholder="Mondjon még egy egész számot!" id="szam2"><br>
+    <input type="number" placeholder="Mondjon még egy egész számot!" id="szam3"><br>
+    <input type="number" placeholder="Mondjon még egy egész számot!" id="szam4"><br>
+    <input type="number" placeholder="Mondjon még egy egész számot!" id="szam5"><br>
+
+    <br>
+
+    <button onclick="osszead(szam1.value, szam2.value, szam3.value, szam4.value, szam5.value)">
+        Összeg
+    </button>
+    <button onclick="szoroz(szam1.value, szam2.value, szam3.value, szam4.value, szam5.value)">
+        Szorzat
+    </button>
+
+    <br>
+
+    <p id="osszeg"></p>
+
+    <br>
+
+    <p id="szorzat"></p>
+
+    <br>
+
+    <p>
+        6.feladat
+    </p>
+
+    <br>
+
+    <input type="number" placeholder="Mondjon egy számot!" id="szam"><br>
+    <button onclick="gyok(szam.value)">
+        Négyzetgyök
+    </button>
+
+    <br>
+
+    <p id="gyok">
+
+    </p>
+
+    <br>
+    
+    <p>
+        7.feladat
+    </p>
+
+    <br>
+
+    <p>
+        Adott egy 40cm X 50cm-es papírlap.
+    </p>
+
+    <input type="number" placeholder='A kisebb papírlap "a" oldala:' id="number">
+    <br>
+    <input type="number" placeholder='A kisebb papírlap "b" oldala:' id="number2">
+    <br>
+    <button onclick="kiszamol(number.value, number2.value)">
+        Kiszámol
+    </button>
+
+    <br>
+
+    <p id="megoldas">
+
+    </p>
+
+    <br>
+
+    <p>
+        8.feladat
+    </p>
+
+    <br>
+
+    <p>
+        Adott egy háromszög.
+    </p>
+
+    <input type="number" placeholder='Az "a" oldala:' id="a">
+    <br>
+    <input type="number" placeholder='Az "b" oldala:' id="b">
+    <br>
+
+    <button onclick="valami(a.value, b.value)">
+        Kiszámol
+    </button>
+
+    <br>
+
+    <p id="megold">
+
+    </p>
+
+    <script>
+        function osszead(szam1, szam2, szam3, szam4, szam5)
+        {
+            localStorage.setItem(szam1, szam2, szam3, szam4, szam5)
+            var osszeg = Number(szam1) + Number(szam2) + Number(szam3) + Number(szam4) + Number(szam5)
+
+            document.getElementById("osszeg").innerHTML="A számok összege: " + osszeg
+        }
+
+        function szoroz(szam1, szam2, szam3, szam4, szam5)
+        {
+            localStorage.setItem(szam1, szam2, szam3, szam4, szam5)
+            var szorzat = Number(szam1) * Number(szam2) * Number(szam3) * Number(szam4) * Number(szam5)
+
+            document.getElementById("szorzat").innerHTML="A számok szorzata: " + szorzat
+        }
+
+        function gyok(szam)
+        {
+            var gyok = Math.sqrt(szam)
+            document.getElementById("gyok").innerHTML="A szám négyzetgyöke: " + gyok
+        }
+
+        function kiszamol(number, number2)
+        {
+            var nagylap = 40*50
+            
+            var kislap = Number(number) * Number(number2)
+
+            var megoldas = Math.trunc(nagylap/kislap)
+
+            document.getElementById("megoldas").innerHTML=megoldas + " " + kislap + "cm2-es lapot lehet kivágni a " + nagylap + "cm2-es lapból."
+        }
+
+        function valami(a, b)
+        {
+            
+        }
+    </script>
+</body>
+</html>
