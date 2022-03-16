@@ -129,16 +129,24 @@
 
     <input type="number" placeholder='Az "a" oldala:' id="a">
     <br>
-    <input type="number" placeholder='Az "b" oldala:' id="b">
+    <input type="number" placeholder='A "b" oldala:' id="b">
+    <br>
+    <input type="number" placeholder='A "c" oldala:' id="c">
     <br>
 
-    <button onclick="valami(a.value, b.value)">
+    <button onclick="valami(a.value, b.value, c.value)">
         Kiszámol
     </button>
 
     <br>
 
     <p id="megold">
+
+    </p>
+    <p id="megold2">
+
+    </p>
+    <p id="megold3">
 
     </p>
 
@@ -176,9 +184,22 @@
             document.getElementById("megoldas").innerHTML=megoldas + " " + kislap + "cm2-es lapot lehet kivágni a " + nagylap + "cm2-es lapból."
         }
 
-        function valami(a, b)
+        function valami(a, b, c)
         {
+            var K = Number(a) + Number(b) + Number(c)
+            var fele = K/2
+
+            var megoldas1 = fele - Number(a)
+
+            var megoldas2 = fele - Number(b)
+
+            var megoldas3 = fele - Number(c)
+
+            document.getElementById("megold").innerHTML="Az a-oldal és a kerület felének különbsége: " + megoldas1 + "."
             
+            document.getElementById("megold2").innerHTML="A b-oldal és a kerület felének különbsége: " + megoldas2 + "."
+            
+            document.getElementById("megold3").innerHTML="A c-oldal és a kerület felének különbsége: " + megoldas3 + "."
         }
     </script>
 </body>
