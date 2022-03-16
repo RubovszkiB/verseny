@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+var a= prompt("Kérek egy évszámot!")
+
+if (a % 4==0){
+document.write("az évszámod szökőév")
+}
+
+
+else if (a % 100==0)
+{
+    if(a % 400==0)
+    {
+        document.write("Az évszámod szökőév")
+    }
+    else (a % 400!=0)
+    {
+        document.write("Az évszámod nem szökőév")
+    }
+}
+
+    </script>
+</body>
+</html>
