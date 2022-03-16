@@ -150,6 +150,22 @@
 
     </p>
 
+    <br>
+
+    <p>
+        10.feladat
+    </p>
+
+    <br>
+
+    <input type="number" placeholder="Az évszám: " id="evszam">
+    <br>
+    <button onclick="fgv2(evszam.value)">Kiszámol</button>
+    <br>
+    <p id="p">
+
+    </p>
+
     <script>
         function osszead(szam1, szam2, szam3, szam4, szam5)
         {
@@ -200,6 +216,29 @@
             document.getElementById("megold2").innerHTML="A b-oldal és a kerület felének különbsége: " + megoldas2 + "."
             
             document.getElementById("megold3").innerHTML="A c-oldal és a kerület felének különbsége: " + megoldas3 + "."
+        }
+
+        function fgv2(evszam)
+        {
+            if(Number(evszam % 4 == 0))
+            {
+                if(Number(evszam % 100 != 0))
+                {
+                    document.getElementById("p").innerHTML="Az évszám szökőév."
+                }
+            }
+            
+            if(Number(evszam) % 100 == 0)
+            {
+                if(Number(evszam) % 400 == 0)
+                {
+                    document.getElementById("p").innerHTML="Az évszám szökőév."
+                }
+                if(Number(evszam) % 400 != 0)
+                {
+                    document.getElementById("p").innerHTML="Az évszám nem szökőév."
+                }
+            }
         }
     </script>
 </body>
